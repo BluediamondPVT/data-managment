@@ -18,6 +18,10 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/customers", require("./routes/customers"));
 
+app.get("/api/test", (req, res) => {
+  res.send("API working");
+});
+
 // Error handling
 app.use((err, req, res, next) => {
   console.error(err.stack);
