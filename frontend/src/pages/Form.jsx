@@ -49,7 +49,7 @@
 //     data.createdAt = new Date();
 
 //     try {
-//       const response = await fetch(`http://localhost:5000/api/customers`, {
+//       const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers`, {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -370,7 +370,7 @@ const AddUserForm = () => {
     setFormStatus({ type: '', message: '' });
     
     try {
-      const response = await fetch(`http://localhost:5000/api/customers`, {
+      const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

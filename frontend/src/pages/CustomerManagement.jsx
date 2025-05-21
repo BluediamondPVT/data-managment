@@ -23,7 +23,7 @@ const CustomerManagement = () => {
             try {
                 setLoading(true);
                 console.log('Fetching data from API...');
-                const response = await fetch(`http://localhost:5000/api/customers`);
+                const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers`);
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -57,7 +57,7 @@ const CustomerManagement = () => {
     const handleAddCustomer = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5000/api/customers`, {
+            const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ const CustomerManagement = () => {
     const handleUpdateCustomer = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5000/api/customers/${currentCustomer._id}`, {
+            const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers/${currentCustomer._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ const CustomerManagement = () => {
     // Delete customer
     const handleDeleteCustomer = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/customers/${currentCustomer._id}`, {
+            const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers/${currentCustomer._id}`, {
                 method: 'DELETE',
             });
 

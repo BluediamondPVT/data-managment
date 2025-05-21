@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AddUserForm from '../pages/Form';
 
+
 const Navbar = () => {
+
+    
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -22,7 +25,7 @@ useEffect(() => {
         if (!name) {
             // If not in localStorage, fetch from backend
             try {
-                const res = await fetch(`http://localhost:5000/api/auth/me`, {
+                const res = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/auth/me`, {
                     credentials: 'include',
                 });
                 if (res.ok) {

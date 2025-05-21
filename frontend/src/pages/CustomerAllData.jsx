@@ -22,7 +22,7 @@ const CustomerAllData = () => {
     const fetchCustomers = async () => {
         try {
             setLoading(true);
-            const response = await fetch(`http://localhost:5000/api/customers`);
+            const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers`);
 
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             
@@ -52,7 +52,7 @@ const CustomerAllData = () => {
 
         try {
             setSearching(true);
-            const response = await fetch(`http://localhost:5000/api/customers/search/phone/${searchPhone}`);
+            const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers/search/phone/${searchPhone}`);
 
             if (!response.ok) throw new Error(`Search failed! Status: ${response.status}`);
             
@@ -105,7 +105,7 @@ const CustomerAllData = () => {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/customers/${id}`, {
+            const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers/${id}`, {
                 method: 'DELETE',
             });
 
@@ -135,7 +135,7 @@ const CustomerAllData = () => {
         };
 
         try {
-            const response = await fetch(`http://localhost:5000/api/customers/${selectedCustomer._id}`, {
+            const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/customers/${selectedCustomer._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
