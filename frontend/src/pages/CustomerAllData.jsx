@@ -324,7 +324,7 @@ const CustomerAllData = () => {
                                                             className="me-2"
                                                             onClick={() => handleUpdateClick(customer)}
                                                         >
-                                                            Edit
+                                                            Tagging
                                                         </Button>
                                                         <Button
                                                             variant="outline-danger"
