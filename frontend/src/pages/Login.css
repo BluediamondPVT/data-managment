@@ -1,0 +1,105 @@
+/* Custom styles to enhance the Bootstrap login form */
+
+.login-container {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  min-height: 100vh;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-header {
+  border-bottom: none;
+  background: linear-gradient(45deg, #3949ab, #4fc3f7);
+  padding: 1.5rem !important;
+}
+
+.input-group-text {
+  border: none;
+}
+
+.input-group .form-control {
+  border-left: none;
+  padding-left: 0.5rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.btn-primary {
+  background-image: linear-gradient(45deg, #3949ab, #4fc3f7);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-image: linear-gradient(45deg, #303f9f, #29b6f6);
+  box-shadow: 0 5px 15px rgba(57, 73, 171, 0.4);
+}
+
+.btn-primary:disabled {
+  background-image: linear-gradient(45deg, #9fa8da, #b3e5fc);
+  cursor: not-allowed;
+}
+
+.text-primary {
+  color: #3949ab !important;
+}
+
+a.text-primary:hover {
+  color: #303f9f !important;
+  text-decoration: underline !important;
+}
+
+.card-footer {
+  border-top: none;
+  background-color: #f8f9fa;
+}
+
+/* Adding animation for the form elements */
+.form-floating {
+  transform: translateY(10px);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.form-floating:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.d-grid {
+  transform: translateY(10px);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .card {
+    border-radius: 0;
+    margin: -1px;
+  }
+
+  .card-header {
+    padding: 1.25rem !important;
+  }
+
+  .card-body {
+    padding: 1.25rem !important;
+  }
+}
