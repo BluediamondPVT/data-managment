@@ -5,7 +5,9 @@ import Home from './pages/Home';
 import CustomerManagement from './pages/CustomerManagement'; 
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
-import PrivateLayout from './layouts/PrivateLayout';
+import PrivateLayout from './layouts/Temp';
+// import PrivateLayout from './layouts/PrivateLayout';
+
 
 
 function App() {
