@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import CustomerManagement from './pages/CustomerManagement'; 
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
-
+import PrivateLayout from './layouts/PrivateLayout';
 
 
 function App() {
@@ -23,23 +23,27 @@ function App() {
 
       {/* Private Route with Navbar layout */}
       <Route
-  path="/"
-  element={
-    <PrivateRoute>
-      <Home />
-    </PrivateRoute>
-  }
-/>
+        path="/"
+        element={
+          <PrivateRoute>
+            <PrivateLayout>
+              <Home />
+            </PrivateLayout>
+          </PrivateRoute>
+        }
+      />
 
-<Route
-  path="/customers"
-  element={
-    <PrivateRoute>
-      <CustomerManagement />
-    </PrivateRoute>
-  }
-/>
-
+      {/* Add new route for CustomerManagement */}
+      <Route
+        path="/customers"
+        element={
+          <PrivateRoute>
+            <PrivateLayout>
+              <CustomerManagement />
+            </PrivateLayout>
+          </PrivateRoute>
+        }
+      />
     </Routes>
   );
 }
